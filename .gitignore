@@ -168,25 +168,21 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-# PyCharm
-#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
-#  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
-#  and can be added to the global gitignore or merged into this file.  For a more nuclear
-#  option (not recommended) you can uncomment the following to ignore the entire idea folder.
-#.idea/
+# IDEs and editors
+#  JetBrains: https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
+.idea/
+.fleet/
+*.iml
+#  VS Code: https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
+.vscode/
+# Visual Studio (Windows)
+.vs/
 
 # Abstra
 # Abstra is an AI-powered process automation framework.
 # Ignore directories containing user credentials, local state, and settings.
 # Learn more at https://abstra.io/docs
 .abstra/
-
-# Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
 
 # Ruff stuff:
 .ruff_cache/
@@ -201,7 +197,25 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+# LLM / AI coding assistants (local state; use `git add -f` or negation rules if you version shared config)
+.cursor/
+.claude/
+.aider*
+.continue/
+.specstory/
+
 # Marimo
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Bakbak smoke test generated audio (keep folder via .gitkeep)
+python/livekit-plugins-bakbak/scripts/output/*
+!python/livekit-plugins-bakbak/scripts/output/.gitkeep
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Local uv lockfile (optional; package is distributed via pyproject/hatch)
+python/livekit-plugins-bakbak/uv.lock
