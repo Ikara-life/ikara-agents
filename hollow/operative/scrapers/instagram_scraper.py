@@ -160,7 +160,7 @@ class InstagramScraper:
                 log.error(
                     "Instagram: 2FA required but no terminal is available.\n"
                     "Run the agent once interactively first:\n"
-                    "  uv run gym-agent\n"
+                    "  uv run operative\n"
                     "Complete the OTP prompt to save a session file, then you\n"
                     "can schedule or automate subsequent runs safely."
                 )

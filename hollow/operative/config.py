@@ -7,13 +7,13 @@ Priority order (highest wins):
   3. Hardcoded defaults below
 
 You never need to export anything or run `source .env`.
-Just fill in .env and run:  uv run gym-agent
+Just fill in .env and run:  uv run operative
 """
 
 import os
 from dotenv import load_dotenv
 
-# Finds and loads .env from the directory you run gym-agent from.
+# Finds and loads .env from the directory you run operative from.
 # override=False means real shell env vars always take precedence over .env.
 load_dotenv(override=False)
 

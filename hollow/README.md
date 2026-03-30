@@ -21,7 +21,7 @@ powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
 ### 2. Clone / unzip and set up the project
 
 ```bash
-cd gym_agent
+cd hollow
 
 # Creates .venv and installs all dependencies from uv.lock — one command
 uv sync
@@ -58,10 +58,10 @@ GOOGLE_CREDENTIALS_FILE=credentials.json
 
 ```bash
 # Using the installed script
-uv run gym-agent
+uv run operative
 
 # With options
-uv run gym-agent --keywords gym pilates yoga crossfit --location "Mumbai" --max 100
+uv run operative --keywords gym pilates yoga crossfit --location "Mumbai" --max 100
 
 # Or run main.py directly
 uv run python main.py --location "Delhi"
@@ -75,8 +75,8 @@ uv run python main.py --location "Delhi"
 uv sync                        # Install / update all dependencies
 uv add <package>               # Add a new dependency
 uv remove <package>            # Remove a dependency
-uv run gym-agent               # Run the agent
-uv run gym-agent --help        # Show all CLI options
+uv run operative               # Run the agent
+uv run operative --help        # Show all CLI options
 uv run ruff check .            # Lint the code
 uv lock --upgrade              # Upgrade all packages to latest
 ```
@@ -129,7 +129,7 @@ keywords + city
 ## Project structure
 
 ```
-gym_agent/
+hollow/
 ├── pyproject.toml              # uv project config + dependencies
 ├── uv.lock                     # locked dependency tree (commit this)
 ├── .env.example                # copy to .env and fill in credentials
@@ -171,5 +171,5 @@ gym_agent/
 - Re-running the agent is safe — the Sheets writer skips rows already in the sheet
 - Automate with cron:
   ```bash
-  0 2 * * * cd /path/to/gym_agent && uv run gym-agent --location "Bangalore" >> cron.log 2>&1
+  0 2 * * * cd /path/to/hollow && uv run operative --location "Bangalore" >> cron.log 2>&1
   ```

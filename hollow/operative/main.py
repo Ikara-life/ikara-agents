@@ -12,13 +12,13 @@ CLI flags:
 import asyncio
 import argparse
 import logging
-from gym_agent.scrapers.instagram_scraper import InstagramScraper
-from gym_agent.scrapers.web_scraper import WebScraper
-from gym_agent.scrapers.google_search import GoogleSearchScraper
-from gym_agent.utils.contact_extractor import ContactExtractor
-from gym_agent.utils.deduplicator import Deduplicator
-from gym_agent.output.sheets_writer import GoogleSheetsWriter
-from gym_agent.config import Config
+from operative.scrapers.instagram_scraper import InstagramScraper
+from operative.scrapers.web_scraper import WebScraper
+from operative.scrapers.google_search import GoogleSearchScraper
+from operative.utils.contact_extractor import ContactExtractor
+from operative.utils.deduplicator import Deduplicator
+from operative.output.sheets_writer import GoogleSheetsWriter
+from operative.config import Config
 
 logging.basicConfig(
     level=logging.INFO,
@@ -170,9 +170,9 @@ async def run_agent(
 
 
 def cli():
-    """Entry point — registered as `gym-agent` in pyproject.toml."""
+    """Entry point — registered as `operative` in pyproject.toml."""
     parser = argparse.ArgumentParser(
-        prog="gym-agent",
+        prog="operative",
         description="Find gym / fitness leads from Instagram + Google → Google Sheets",
         formatter_class=argparse.RawTextHelpFormatter,
     )
